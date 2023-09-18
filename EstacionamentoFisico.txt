@@ -1,0 +1,16 @@
+create database estacionamento;
+
+use estacionamento;
+
+create table veiculo ( idVeiculo int primary key auto_increment, fabricante varchar(50) not null, modelo varchar(80) not null, placa char(7) not null unique );
+
+alter table veiculo rename to carro;
+
+alter table carro add cor varchar(15) not null after modelo;
+
+alter table carro modify cor char(8) not null;
+
+alter table carro change modelo nome_modelo varchar(50) not null;
+
+alter table carro drop cor;
+

@@ -6,6 +6,31 @@ create table Aluno ( matricula int primary key auto_increment, nome varchar(80) 
 
 create table turma ( numero int primary key, turno char(1) not null, definicao varchar(60));
 
+create table disciplina ( cod_disciplina int primary key auto_increment, nome varchar(30) not null );
+
+create table estuda ( idEstuda int primary key auto_increment, fk_Aluno_matricula int not null, fk_Turma_numero int not null );
+
+create table possui ( idPossui int primary key auto_increment, fk_Disciplina_cod_disciplina int not null, fk_Turma_numero int not null );
+
+create table professor ( matricula int primary key auto_increment, nome varchar(80) not null, formacao varchar(30));
+
+create table leciona ( idLeciona int primary key auto_increment, fk_Disciplina_cod_disciplina int not null, fk_Professor_matricula int not null );
+
+
+
+alter table estuda add constraint fkmat foreign key (fk_Aluno_matricula) references Aluno (matricula);
+
+alter table estuda add constraint fknum foreign key (fk_Turma_numero) references Turma (numero);
+
+alter table possui add constraint fkdis foreign key ( fk_Disciplina_cod_disciplina ) references disciplina ( cod_disciplina ) ;
+
+alter table possui add constraint fktur foreign key ( fk_Turma_numero ) references turma ( numero ) ;
+
+alter table leciona add constraint fkdis2 foreign key ( fk_Disciplina_cod_disciplina ) references disciplina ( cod_disciplina ) ;
+
+alter table leciona add constraint fkpro foreign key ( fk_professor_matricula ) references professor ( matricula ) ;
+
+
 insert into aluno values ( 3001, 'Godofredo Henrique', '2000-03-15', '123.456.789-01', 'Godojane Maia', 'gh@email.com' );
 
 insert into aluno values ( null, 'Josefina Winter', '1945-02-10', '123.456.789-02', 'Clenisbaldo Winter', null) ;

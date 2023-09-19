@@ -32,7 +32,45 @@ alter table leciona add constraint fkpro foreign key ( fk_professor_matricula ) 
 
 
 insert into aluno values ( 3001, 'Godofredo Henrique', '2000-03-15', '123.456.789-01', 'Godojane Maia', 'gh@email.com' );
-
 insert into aluno values ( null, 'Josefina Winter', '1945-02-10', '123.456.789-02', 'Clenisbaldo Winter', null) ;
+insert into aluno values ( null, 'Ana Carolina','2001-07-11', '123.456.789-04', 'Maria Carolina', 'ac@email.com' );
+insert into aluno ( matricula, nome, nascimento, cpf, responsavel, email ) values ( null, 'Elias Sherman', '1995-03-02', '123.456.789-05', 'John Sherman', 'es@email.com' );
+insert into aluno ( nome, cpf, responsavel ) values ( 'Waldiney Mouse', '123.456.789-06', 'Wesley Keyboard' );
+insert into aluno ( cpf, matricula, nome, responsavel, email ) values ( '123.456.789-07', null, 'Genivaldo Williams', 'Clotilde Williams', 'gw@email.com' );
+
+insert into turma values ( 2023080, 'M', 'Técnico de Informática' );
+insert into turma values ( 2023090, 'T', 'Técnico em Comunicação Visual' );
+
+insert into estuda values ( 7501, 3001, 2023090 );
+insert into estuda values ( null, 3005, 2023080 );
+insert into estuda values ( null, 3003, 2023090 );
+insert into estuda values ( null, 3004, 2023080 );
+insert into estuda values ( null, 3004, 2023090 );
+insert into estuda values ( null, 3006, 2023090 );
+insert into estuda values ( null, 3007, 2023080 );
+
+insert into disciplina values ( 21, 'Programação' );
+insert into disciplina values ( null, 'Redes' );
+insert into disciplina values ( null, 'Tratamento de Imagem' );
+
+insert into possui values ( 341, 21, 2023080 );
+insert into possui values ( null, 22, 2023080 );
+insert into possui values ( null, 23, 2023090 );
+
+insert into professor values ( 1901, 'Sérgio Carlos', 'T.I.' );
+insert into professor values ( null, 'Vicente Silva', 'T.I.' );
+insert into professor values ( null, 'Flávia Albuquerque', 'Design' );
+
+insert into leciona values ( 601, 21, 1901 );
+insert into leciona values ( null, 22, 1902 );
+insert into leciona values ( null, 23, 1903 );
+
+
+
+
+
+
+
+
 
 

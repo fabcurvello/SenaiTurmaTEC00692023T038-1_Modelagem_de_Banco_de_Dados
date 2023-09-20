@@ -47,7 +47,7 @@ insert into estuda values ( null, 3003, 2023090 );
 insert into estuda values ( null, 3004, 2023080 );
 insert into estuda values ( null, 3004, 2023090 );
 insert into estuda values ( null, 3006, 2023090 );
-insert into estuda values ( null, 3007, 2023080 );
+insert into estuda values ( null, 3002, 2023080 );
 
 insert into disciplina values ( 21, 'Programação' );
 insert into disciplina values ( null, 'Redes' );
@@ -64,6 +64,49 @@ insert into professor values ( null, 'Flávia Albuquerque', 'Design' );
 insert into leciona values ( 601, 21, 1901 );
 insert into leciona values ( null, 22, 1902 );
 insert into leciona values ( null, 23, 1903 );
+
+insert into disciplina values ( null, 'Lógica de Programação' );
+
+insert into professor values ( null, 'Jefferson Brandão', 'T.I.' );
+
+insert into possui values ( null, 24, 2023080 );
+
+insert into leciona values ( null, 24, 1904 );
+
+update professor set nome = 'Vicente Orsino' where matricula = 1902;
+
+update aluno set nascimento = '1980-09-20' where matricula = 3006;
+update aluno set nascimento = '1980-09-20' where matricula = 3007;
+
+alter table professor add email varchar(40) unique after nome;
+
+update professor set email = 'sc@email.com' where matricula = 1901;
+update professor set email = 'vic@email.com' where matricula = 1902;
+update professor set email = 'flavia@email.com' where matricula = 1903;
+update professor set email = 'jeff@email.com' where matricula = 1904;
+
+insert into turma values ( 2023100, 'M', 'Técnico em Comunicação Visual' );
+
+insert into possui values ( null, 23, 2023100 );
+
+insert into aluno values ( null, 'Judite Presley', '2000-01-01', '123.456.789-08', 'Elvis Presley', 'judite@email.com' );
+
+insert into estuda values ( null, 3008, 2023100 );
+
+update disciplina set nome = 'Programação Python' where cod_disciplina = 21;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

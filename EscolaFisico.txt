@@ -96,6 +96,22 @@ insert into estuda values ( null, 3008, 2023100 );
 update disciplina set nome = 'Programação Python' where cod_disciplina = 21;
 
 
+insert into aluno values ( null, 'Renata Mouse', '1995-03-15', '123.456.789-09', 'Wesley Keyboard', 'rm@email.com' );
+update aluno set nome = 'Renata Mouse Silva' where matricula = 3009;
+
+insert into aluno values ( null, 'Mouse Sherman Williams', '2015-09-12', '123.456.789-10', 'Cpu Sherman', null );
+
+alter table professor add dependentes int;
+
+update professor set dependentes = 3 where matricula = 1901;
+update professor set dependentes = 0 where matricula = 1902;
+update professor set dependentes = 2 where matricula = 1904;
+
+
+
+
+
+
 
 
 

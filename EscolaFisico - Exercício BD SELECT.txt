@@ -1,0 +1,97 @@
+Exercícios de fixação de BD (Utilize os modelos de BD Escola):
+
+--Crie um TXT para salvar o comando resposta para cada questão--
+
+01 - Exibir nome e e-mail de todos os alunos que possuem e-mail;
+select nome, email from aluno where email is not null;
+select nome as 'Aluno:', email as 'E-mail:' from aluno where email is not null;
+
+02 - Exibir, em ordem alfabética, todos os nomes de professores de TI;
+select nome from professor where formacao = 'T.I.' order by nome;
+
+03 - Exibir todos os alunos com matrícula entre 3004 e 3008;
+select * from aluno where matricula >= 3004 and matricula <= 3008;
+select * from aluno where matricula between 3004 and 3008;
+
+04 - Exibir todos os números de turmas de TI;
+select numero from turma where definicao = 'Técnico de Informática';
+
+
+05 - Exibir todas as disciplinas de turmas de TI;
+select disciplina.nome from turma, possui, disciplina where turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.cod_disciplina and turma.definicao = 'Técnico de Informática';
+
+06 - Exibir a contagem de turmas de TI (quantas turmas de TI existem);
+select count(definicao) as 'Total Turmas TI' from turma where definicao = 'Técnico de Informática';
+
+07 - Exibir todos os alunos que nasceram em 2000;
+select * from aluno where year(nascimento) = 2000;
+select * from aluno where nascimento like '2000%';
+
+08 - Exibir nome e nascimento de todos os alunos que nasceram em Setembro;
+select nome, nascimento from aluno where month(nascimento) = 9;
+select nome, nascimento from aluno where nascimento like '____-09-%';
+
+09 - Exibir nome e cpf de todos os alunos que estudam de manhã;
+select aluno.nome, aluno.cpf from aluno, estuda, turma where aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_turma_numero = turma.numero and turma.turno = 'm';
+
+select aluno.nome 'Alunos Turno Manhã', aluno.cpf CPF from aluno, estuda, turma where aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_turma_numero = turma.numero and turma.turno = 'm';
+
+10 - Exibir todas as disciplinas das turmas da tarde;
+select disciplina.* from turma, possui, disciplina where turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.cod_disciplina and turma.turno = 't';
+
+11 - Exibir nomes de todos os professores que atuam em turmas de TI;
+select professor.nome from turma, possui, disciplina, leciona, professor where turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.cod_disciplina and disciplina.cod_disciplina = leciona.fk_disciplina_cod_disciplina and leciona.fk_professor_matricula = professor.matricula and turma.definicao = 'Técnico de Informática';
+
+select pr.nome from turma as t, possui as p, disciplina as d, leciona as l, professor as pr where t.numero = p.fk_turma_numero and p.fk_disciplina_cod_disciplina = d.cod_disciplina and d.cod_disciplina = l.fk_disciplina_cod_disciplina and l.fk_professor_matricula = pr.matricula and t.definicao = 'Técnico de Informática';
+
+12 - Exibir o nome de todos os alunos do Professor Vicente;
+select aluno.nome from aluno, estuda, turma, possui, disciplina, leciona, professor where  aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_turma_numero = turma.numero and turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.cod_disciplina and disciplina.cod_disciplina = leciona.fk_disciplina_cod_disciplina and leciona.fk_professor_matricula = professor.matricula and professor.nome = 'Vicente Orsino';
+
+13 - Exibir matrícula e nome de todos os alunos que possuem a disciplina de Lógica de Programação;
+14 - Exibir o nome de todos os professores que dão aula nas turmas da tarde, em ordem alfabética;
+15 - Exibir o nome de todos os professores que possuem pelo menos 1 dependente e dão aulas nas turmas de TI;
+16 - Exibir o nome de todas as disciplinas que possuem a palavra Programação;
+17 - Exibir nome e e-mail dos professores com as matrículas 1902 e 1904;
+18 - Exibir nomes de professores e suas formações da seguinte forma: "Professor: nome - Formação: formacao"
+
+
+--Entregue o TXT com os comandos que solucionam estas questões na atividade FBD 04 no TEAMS--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

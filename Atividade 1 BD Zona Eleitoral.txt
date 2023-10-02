@@ -1,0 +1,8 @@
+Por gentileza, acessar um repositório no github do professor para buscar esses materiais:
+
+URL: 
+https://github.com/fabcurvello/SenaiTurmaTEC00692023T038-1_Modelagem_de_Banco_de_Dados
+
+Pegar tudo que começa com ZonaEleitoral.
+
+Salvar tudo no seu repositório git local de BD e em seguida fazer commit e push

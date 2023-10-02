@@ -1,0 +1,7 @@
+1 - Exibir nome do eleitor, numero de seção e descricao da secao eleitoral onde o eleitor vota;
+select eleitor.nome, secaoeleitoral.numerosecao, secaoeleitoral.descricao from eleitor, secaoeleitoral where secaoeleitoral.numerosecao = eleitor.fk_secaoeleitoral_numerosecao;
+
+2 - Exibir nome da localidade, numero da zona eleitoral e nome da zona eleitoral de todas as zonas eleitorais existentes;
+select localidade.nomelocalidade, zonaeleitoral.numeroze, zonaeleitoral.nomeze from localidade, zonaeleitoral where localidade.idlocalidade = zonaeleitoral.fk_localidade_idlocalidade;
+
+

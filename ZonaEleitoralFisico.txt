@@ -104,7 +104,7 @@ insert into partidoPolitico values ( 'pl', 'Partido da Galera da Limpeza', 82 );
 
 insert into candidato values ( 58, 'Pedro Jose', 'PJ', 10001, 'pa' );
 
-insert into candidato values ( 59, 'Raquel Souza', 'Raquelzinha', 10002, 'pa' )
+insert into candidato values ( 59, 'Raquel Souza', 'Raquelzinha', 10002, 'pa' );
 
 insert into candidato values ( 79, 'Julio Souza', 'Julinho da Forca', 10001, 'pp' );
 
